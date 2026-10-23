@@ -336,7 +336,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum(rate(library_http_requests_total{status_code=~\"5..\"}[5m]))",
+          "expr": "(sum(rate(library_http_requests_total{status_code=~\"5..\"}[5m]))) or vector(0)",
           "refId": "A",
           "legendFormat": "{{job}} {{name}}"
         }

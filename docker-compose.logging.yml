@@ -1,0 +1,28 @@
+services:
+  loki:
+    image: grafana/loki:2.9.10
+    restart: unless-stopped
+    command: ["-config.file=/etc/loki/loki.yml"]
+    volumes:
+      - ./loki/loki.yml:/etc/loki/loki.yml:ro
+      - loki_data:/loki
+    networks: [monitor_net]
+    security_opt: ["no-new-privileges:true"]
+
+  promtail:
+    image: grafana/promtail:2.9.10
+    restart: unless-stopped
+    command: ["-config.file=/etc/promtail/promtail.yml"]
+    volumes:
+      - ./promtail/promtail.yml:/etc/promtail/promtail.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - promtail_positions:/tmp
+    depends_on: [loki]
+    networks: [monitor_net]
+    # Promtail legacy can doc thu muc log Docker voi quyen root tren host lab.
+    user: "0:0"
+    security_opt: ["no-new-privileges:true"]
+
+volumes:
+  loki_data:
+  promtail_positions:
