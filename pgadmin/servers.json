@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Thu vien PostgreSQL",
+      "Group": "Docker",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "library_db",
+      "Username": "library_admin",
+      "SSLMode": "prefer"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "library-management-docker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Thu vien: sach, doc gia, muon tra, Prometheus metrics",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "express": "4.21.2",
+    "pg": "8.13.1",
+    "prom-client": "15.1.3"
+  },
+  "engines": { "node": ">=20" }
+}

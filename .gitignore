@@ -1,0 +1,67 @@
+
+# ==============================
+# 1. Environment & Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# ==============================
+# 2. Node.js
+# ==============================
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+coverage/
+
+# ==============================
+# 3. Logs & Temporary Files
+# ==============================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+
+# ==============================
+# 4. Database & Backups
+# ==============================
+postgres_data/
+mysql_data/
+*.sql.bak
+*.dump
+*.backup
+
+# ==============================
+# 5. Monitoring Data
+# ==============================
+grafana_data/
+prometheus_data/
+loki_data/
+alertmanager_data/
+
+# ==============================
+# 6. Docker
+# ==============================
+docker-compose.override.yml
+*.pid
+
+# ==============================
+# 7. Operating System & IDE
+# ==============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
+
